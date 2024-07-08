@@ -1,0 +1,145 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  
+}
+body{
+  background-color: hsl(148, 38%, 91%);
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  font-family: "Karla",sans-serif;
+  font-size: 16px;
+}
+p{
+  color:hsl(0, 66%, 54%);
+  margin-top: .5em;
+}
+p{
+  display: none;
+}
+.container{
+  background-color: white;
+  margin: 1em;
+  padding: 2em;
+  border-radius: 10px;
+}
+input[type='text'],input[type='email'],textarea,button{
+  padding: .5rem;
+  border-radius: 5px;
+  border: 1px solid hsl(186, 15%, 59%);
+  width: 100%;
+  margin-top:.5em;
+  cursor: pointer;
+}
+
+input:focus,textarea:focus{
+  outline: 1px solid hsl(169, 58%, 36%);
+ border: 1px solid hsl(148, 38%, 91%) ;
+}
+
+.labelname{
+  margin-top: 1em;
+}
+.container .labelname:nth-child(1){
+  display: flex;
+  gap: 1em;
+}
+.container .box{
+  display: flex;
+  gap: 1em;
+}
+.container .consent{
+  display: flex;
+  gap: 1em;
+}
+.box .query{
+  border: 1px solid hsl(186, 15%, 59%);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  border-radius: 5px;
+  padding: .5em;
+  margin-top: .5em;
+  cursor: pointer;
+}
+.query:active{
+background-color: hsl(148, 38%, 91%);
+}
+.query input[type='radio']{
+  appearance: none;
+  width: .5em;
+  height: .5em;
+ outline: 2px solid hsl(169, 58%, 36%);
+ outline-offset: 3px;
+ border-radius: 50%;
+}
+.query input[type='radio']:checked{
+  background-color: hsl(169, 58%, 36%);
+}
+.query label{
+  width: 100%;
+  cursor: pointer;
+}
+.consent input[type='checkbox']{
+  cursor: pointer;
+  accent-color: hsl(169, 58%, 36%);
+}
+button{
+  background-color: hsl(169, 58%, 36%);
+  cursor: pointer;
+  color: white;
+}
+button:hover{
+  background-color: hsl(187, 24%, 22%);
+}
+.alert{
+  background-color: hsl(187, 24%, 22%);
+  color: white;
+  justify-self: center;
+  max-width: fit-content;
+  padding: 1em;
+  border-radius: .5em;
+  display: flex;
+  gap: .7em;
+  flex-direction: column;
+  position: fixed;
+  margin-top: 5%;
+  opacity: 0;
+}
+.alert div:nth-child(1){
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.active{
+  display: block;
+  animation-name: fade;
+  animation-duration: 5s;
+}
+@keyframes fade{
+0%,25%,50%{
+  opacity: 1;
+}
+100%{
+  opacity: 0;
+}
+
+}
+@media (max-width:360px) {
+  .labelname:nth-child(1){
+    flex-direction: column;
+  }
+  .box{
+    flex-direction: column;
+  }
+  textarea{
+    height: 200px;
+  }
+.alert{
+  margin-top: 0%;
+  width: 70%;
+}
+}
